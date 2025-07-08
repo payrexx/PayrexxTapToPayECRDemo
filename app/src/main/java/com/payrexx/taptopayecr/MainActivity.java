@@ -41,14 +41,16 @@ public class MainActivity extends AppCompatActivity {
 
                 SaleDataDTO dataDto = new SaleDataDTO();
                 try {
-                    dataDto.amount = Float.parseFloat(amountInput.getText().toString());
+                    // important: amount needs to be type of string
+                    dataDto.amount = amountInput.getText().toString();
                 } catch (NumberFormatException e) {
-                    dataDto.amount = 0f;
+                    dataDto.amount = "0";
                 }
                 try {
-                    dataDto.tip = Float.parseFloat(amountTipInput.getText().toString());
+                    // important: tip needs to be type of string
+                    dataDto.tip = amountTipInput.getText().toString();
                 } catch (NumberFormatException e) {
-                    dataDto.tip = 0f;
+                    dataDto.tip = "0";
                 }
                 dataDto.order_reference = orderReferenceInput.getText().toString();
 
@@ -64,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 String payload = gson.toJson(dto);
                 // Payload will look like this:
                 // {
-                //     "payload": "{\"data\":{\"amount\":9,\"order_reference\":\"Test\",\"show_result\":true,\"tip\":1},\"operation\":\"sale\"}",
+                //     "payload": "{\"data\":{\"amount\":"9,5",\"order_reference\":\"Test\",\"show_result\":true,\"tip\":"0,5"},\"operation\":\"sale\"}",
                 //     "signature": ""
                 // }
 
