@@ -5,4 +5,7 @@
     <string name="hint_tip_amount">Trinkgeld Betrag</string>
     <string name="hint_order_reference">Bestell Referenz</string>
     <string name="start_button">Bestätigen</string>
+    <string name="approved">Zahlung Bestätigt</string>
+    <string name="declined">Zahlung Abgelehnt</string>
+    <string name="back">Zurück</string>
 </resources>
