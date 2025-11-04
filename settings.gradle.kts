@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Payrexx Tap To Pay ECR Demo"
 include(":app")
+include(":payrexx:taptopay:sdk")

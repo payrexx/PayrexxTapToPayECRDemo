@@ -3,7 +3,10 @@
     <string name="hint_amount">Amount</string>
     <string name="hint_tip_amount">Tip Amount</string>
     <string name="hint_order_reference">Order Reference</string>
-    <string name="start_button">Start Intent</string>
+    <string name="start_button">Start Payment</string>
+    <string name="history_button">Last 20 Payments</string>
+    <string name="send_receipt">Send Receipt</string>
+    <string name="email_phone">Email or Phone</string>
     <string name="approved">Payment Approved</string>
     <string name="declined">Payment Declined</string>
     <string name="back">Back</string>

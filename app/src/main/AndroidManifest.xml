@@ -22,7 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ResultActivity" />
+        <activity android:name=".TransactionActivity" />
+        <activity android:name=".TransactionListActivity" />
     </application>
     <queries>
         <package android:name="com.payrexx.taptopay" />

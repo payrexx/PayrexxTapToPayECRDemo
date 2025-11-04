@@ -11,6 +11,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/payrexx" />
+            <option value="$PROJECT_DIR$/payrexx/taptopay" />
+            <option value="$PROJECT_DIR$/payrexx/taptopay/sdk" />
           </set>
         </option>
       </GradleProjectSettings>
