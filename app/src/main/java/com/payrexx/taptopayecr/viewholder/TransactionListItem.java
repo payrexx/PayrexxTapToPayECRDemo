@@ -35,7 +35,7 @@ public class TransactionListItem extends RecyclerView.ViewHolder {
             methodText += " - " + transaction.cardType;
         }
         ((TextView) this.itemView.findViewById(R.id.method)).setText(methodText);
-        ((TextView) this.itemView.findViewById(R.id.status)).setText(transaction.status.toString());
+        ((TextView) this.itemView.findViewById(R.id.status)).setText(transaction.operation.toString() + " - " + transaction.status.toString());
         LinearLayout item = this.itemView.findViewById(R.id.TransactionItem);
         item.setOnClickListener(new View.OnClickListener() {
             @Override

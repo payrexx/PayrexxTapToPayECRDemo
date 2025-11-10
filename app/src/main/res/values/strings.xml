@@ -6,6 +6,7 @@
     <string name="start_button">Start Payment</string>
     <string name="history_button">Last 20 Payments</string>
     <string name="send_receipt">Send Receipt</string>
+    <string name="refund">Refund</string>
     <string name="email_phone">Email or Phone</string>
     <string name="approved">Payment Approved</string>
     <string name="declined">Payment Declined</string>

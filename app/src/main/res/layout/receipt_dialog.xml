@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/AmountContainer"
+        android:id="@+id/ReceiptContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp">
@@ -16,6 +16,4 @@
             android:hint="@string/email_phone"
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
-
-
 </LinearLayout>
