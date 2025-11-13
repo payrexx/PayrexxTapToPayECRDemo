@@ -5,6 +5,7 @@ import static android.view.View.VISIBLE;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,11 +25,8 @@ import com.payrexx.taptopay.sdk.lib.operation.Refund;
 import com.payrexx.taptopay.sdk.lib.operation.Void;
 import com.payrexx.taptopay.sdk.model.EmptyResponse;
 import com.payrexx.taptopay.sdk.model.SingleResponse;
-import com.payrexx.taptopay.sdk.model.Transaction;
+import com.payrexx.taptopay.sdk.model.transaction.Operation;
 import com.payrexx.taptopay.sdk.model.transaction.Status;
-
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class TransactionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,9 +52,15 @@ public class TransactionActivity extends AppCompatActivity {
         }
 
         TapToPay tapToPay = new TapToPay(this);
+        String paymentType;
+        if (response.transaction.operation == Operation.SALE) {
+            paymentType = "Payment";
+        } else {
+            paymentType = "Refund";
+        }
 
         if (response.transaction.status != Status.SUCCESSFUL) {
-            statusView.setText(R.string.declined);
+            statusView.setText(paymentType + " declined");
             statusImage.setImageResource(R.drawable.declined);
 
             String errorMessage = response.message;
@@ -64,7 +68,7 @@ public class TransactionActivity extends AppCompatActivity {
             errorMessageView.setVisibility(VISIBLE);
             errorMessageView.setText(errorMessage);
         } else {
-            statusView.setText(R.string.approved);
+            statusView.setText(paymentType + " approved");
             statusImage.setImageResource(R.drawable.approved);
         }
 
@@ -111,12 +115,18 @@ public class TransactionActivity extends AppCompatActivity {
                             tapToPay.doOperation(
                                 new Void(voidDto),
                                 result -> {
-                                    String message = "Refunded Successfully";
-                                    if (result instanceof EmptyResponse || ((SingleResponse)result).message.equals("Failure")) {
-                                        message = "Failed to refund";
+                                    if (!(result instanceof EmptyResponse)) {
+                                        SingleResponse response = (SingleResponse) result;
+                                        if (response.transaction != null) {
+                                            Intent intent = new Intent(TransactionActivity.this, TransactionActivity.class);
+                                            intent.putExtra("response", response);
+                                            startActivity(intent);
+                                            finish();
+                                            return;
+                                        }
                                     }
                                     Toast toast = new Toast(TransactionActivity.this);
-                                    toast.setText(message);
+                                    toast.setText("Failed to refund");
                                     toast.show();
                                 }
                             );
@@ -125,12 +135,18 @@ public class TransactionActivity extends AppCompatActivity {
                             tapToPay.doOperation(
                                 new Refund(refundDto),
                                 result -> {
-                                    String message = "Refunded Successfully";
-                                    if (result instanceof EmptyResponse || ((SingleResponse)result).message.equals("Failure")) {
-                                        message = "Failed to refund";
+                                    if (!(result instanceof EmptyResponse)) {
+                                        SingleResponse response = (SingleResponse) result;
+                                        if (response.transaction != null) {
+                                            Intent intent = new Intent(TransactionActivity.this, TransactionActivity.class);
+                                            intent.putExtra("response", response);
+                                            startActivity(intent);
+                                            finish();
+                                            return;
+                                        }
                                     }
                                     Toast toast = new Toast(TransactionActivity.this);
-                                    toast.setText(message);
+                                    toast.setText("Failed to refund");
                                     toast.show();
                                 }
                             );
