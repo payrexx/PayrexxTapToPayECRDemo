@@ -21,8 +21,6 @@ import io.github.payrexx.taptopay.sdk.lib.operation.TransactionHistory;
 import io.github.payrexx.taptopay.sdk.model.EmptyResponse;
 import io.github.payrexx.taptopay.sdk.model.ListResponse;
 import io.github.payrexx.taptopay.sdk.model.SingleResponse;
-import io.github.payrexx.taptopay.sdk.model.transaction.Operation;
-import io.github.payrexx.taptopay.sdk.model.transaction.Status;
 
 public class MainActivity extends AppCompatActivity {
 
