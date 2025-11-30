@@ -1,5 +1,6 @@
 package io.github.payrexx.taptopayecr.viewholder;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -19,7 +20,7 @@ import java.time.format.FormatStyle;
 
 public class TransactionListItem extends RecyclerView.ViewHolder {
 
-    View itemView;
+    private final View itemView;
 
     public TransactionListItem(@NonNull View itemView) {
         super(itemView);
@@ -27,6 +28,7 @@ public class TransactionListItem extends RecyclerView.ViewHolder {
     }
 
     public void setData(Transaction transaction) {
+        Context context = this.itemView.getContext();
         ((TextView) this.itemView.findViewById(R.id.reference)).setText(transaction.orderReference);
         ((TextView) this.itemView.findViewById(R.id.amount)).setText(
             String.format("%s %s", transaction.currency, transaction.amount.toString())
@@ -40,18 +42,41 @@ public class TransactionListItem extends RecyclerView.ViewHolder {
             methodText += " - " + transaction.cardType;
         }
         ((TextView) this.itemView.findViewById(R.id.method)).setText(methodText);
+        String operationText;
+        switch (transaction.operation) {
+            case VOID:
+            case REFUND:
+                operationText = context.getString(R.string.payment_refund);
+                break;
+            case SALE:
+            default:
+                operationText = context.getString(R.string.payment_sale);
+                break;
+        }
+
+        String statusText;
+        switch (transaction.status) {
+            case FAILED:
+                statusText = context.getString(R.string.failed);
+                break;
+            case PENDING:
+                statusText = context.getString(R.string.pending);
+                break;
+            case SUCCESSFUL:
+            default:
+                statusText = context.getString(R.string.successful);
+                break;
+        }
+
         ((TextView) this.itemView.findViewById(R.id.status)).setText(
-            String.format("%s - %s", transaction.operation.toString(), transaction.status.toString())
+            String.format("%s - %s", operationText, statusText)
         );
         LinearLayout item = this.itemView.findViewById(R.id.TransactionItem);
-        item.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(itemView.getContext(), TransactionActivity.class);
-                SingleResponse response = SingleResponse.getInstance(transaction);
-                intent.putExtra("response", response);
-                itemView.getContext().startActivity(intent);
-            }
+        item.setOnClickListener(view -> {
+            Intent intent = new Intent(itemView.getContext(), TransactionActivity.class);
+            SingleResponse response = SingleResponse.getInstance(transaction);
+            intent.putExtra("response", response);
+            itemView.getContext().startActivity(intent);
         });
     }
 }

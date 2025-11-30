@@ -59,7 +59,7 @@ public class TransactionActivity extends AppCompatActivity {
 
         if (response.transaction.status != Status.SUCCESSFUL) {
             statusView.setText(
-                String.format("%s %s", paymentType, this.getString(R.string.declined))
+                String.format("%s %s", paymentType, this.getString(R.string.failed))
             );
             statusImage.setImageResource(R.drawable.declined);
 

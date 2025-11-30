@@ -1,16 +1,13 @@
 package io.github.payrexx.taptopayecr;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import io.github.payrexx.taptopay.sdk.TapToPay;
 import io.github.payrexx.taptopay.sdk.model.ListResponse;
-import io.github.payrexx.taptopayecr.R;
 
 import io.github.payrexx.taptopayecr.adapter.TransactionListAdapter;
 import io.github.payrexx.taptopayecr.viewholder.TransactionListItem;

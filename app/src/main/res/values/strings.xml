@@ -11,8 +11,10 @@
     <string name="receipt_sent">Receipt sent</string>
     <string name="receipt_send_failed">Failed to send Receipt</string>
     <string name="email_phone">Email or Phone</string>
+    <string name="successful">Successful</string>
+    <string name="pending">Pending</string>
     <string name="approved">Approved</string>
-    <string name="declined">Declined</string>
+    <string name="failed">Failed</string>
     <string name="back">Back</string>
     <string name="cancel">Cancel</string>
     <string name="payment_sale">Payment</string>
