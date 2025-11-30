@@ -6,10 +6,20 @@
     <string name="hint_order_reference">Bestell Referenz</string>
     <string name="start_button">Starte Zahlung</string>
     <string name="history_button">Letzte 20 Zahlungen</string>
-    <string name="send_receipt">Beleg Senden</string>
-    <string name="refund">Zurückerstatten</string>
+    <string name="send_receipt">Beleg senden</string>
+    <string name="send_sms">SMS senden</string>
+    <string name="send_email">E-Mail senden</string>
+    <string name="receipt_sent">Beleg versendet</string>
+    <string name="receipt_send_failed">Beleg konnte nicht versendet werden</string>
     <string name="email_phone">Email oder Telefon</string>
-    <string name="approved">Zahlung Bestätigt</string>
-    <string name="declined">Zahlung Abgelehnt</string>
+    <string name="approved">Bestätigt</string>
+    <string name="declined">Abgelehnt</string>
     <string name="back">Zurück</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="payment_sale">Zahlung</string>
+    <string name="payment_refund">Zurückerstattung</string>
+    <string name="payment_cancelled">Zahlung abgeborchen</string>
+    <string name="refund">Zurückerstatten</string>
+    <string name="refund_amount_too_high">Der Betrag für die Rückerstattung ist zu hoch</string>
+    <string name="refund_failed">Rückerstattung fehlgeschlagen</string>
 </resources>

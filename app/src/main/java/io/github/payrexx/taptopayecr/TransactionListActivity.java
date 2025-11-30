@@ -1,4 +1,4 @@
-package com.payrexx.taptopayecr;
+package io.github.payrexx.taptopayecr;
 
 import android.os.Bundle;
 import android.view.View;
@@ -8,10 +8,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.payrexx.taptopay.sdk.TapToPay;
-import com.payrexx.taptopay.sdk.model.ListResponse;
-import com.payrexx.taptopayecr.adapter.TransactionListAdapter;
-import com.payrexx.taptopayecr.viewholder.TransactionListItem;
+import io.github.payrexx.taptopay.sdk.TapToPay;
+import io.github.payrexx.taptopay.sdk.model.ListResponse;
+import io.github.payrexx.taptopayecr.R;
+
+import io.github.payrexx.taptopayecr.adapter.TransactionListAdapter;
+import io.github.payrexx.taptopayecr.viewholder.TransactionListItem;
 
 public class TransactionListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +38,6 @@ public class TransactionListActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         Button back = findViewById(R.id.Back);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+        back.setOnClickListener(view -> finish());
     }
 }

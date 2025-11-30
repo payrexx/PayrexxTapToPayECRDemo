@@ -6,9 +6,19 @@
     <string name="start_button">Start Payment</string>
     <string name="history_button">Last 20 Payments</string>
     <string name="send_receipt">Send Receipt</string>
-    <string name="refund">Refund</string>
+    <string name="send_sms">send sms</string>
+    <string name="send_email">send email</string>
+    <string name="receipt_sent">Receipt sent</string>
+    <string name="receipt_send_failed">Failed to send Receipt</string>
     <string name="email_phone">Email or Phone</string>
-    <string name="approved">Payment Approved</string>
-    <string name="declined">Payment Declined</string>
+    <string name="approved">Approved</string>
+    <string name="declined">Declined</string>
     <string name="back">Back</string>
+    <string name="cancel">Cancel</string>
+    <string name="payment_sale">Payment</string>
+    <string name="payment_refund">Refund</string>
+    <string name="payment_cancelled">Payment cancelled</string>
+    <string name="refund">Refund</string>
+    <string name="refund_amount_too_high">Refund amount is too high</string>
+    <string name="refund_failed">Refund failed</string>
 </resources>

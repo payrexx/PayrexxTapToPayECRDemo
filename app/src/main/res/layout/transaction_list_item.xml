@@ -8,27 +8,25 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+        android:layout_margin="10dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:id="@+id/header"
-            >
+            android:id="@+id/header">
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:id="@+id/amount"
                 android:textSize="10pt"
-                android:text="CHF 13.00"/>
+                android:text=""/>
             <TextView
                 android:id="@+id/status"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Failed"
+                android:text="@string/declined"
                 android:textAlignment="textEnd"/>
         </LinearLayout>
         <TextView
@@ -36,25 +34,24 @@
             android:layout_height="wrap_content"
             android:id="@+id/reference"
             android:layout_below="@id/header"
-            android:text="Meine tolle transaction"/>
+            android:text=""/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_below="@id/reference"
-            >
+            android:layout_below="@id/reference">
             <TextView
                 android:id="@+id/method"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Mastercard"/>
+                android:text=""/>
             <TextView
                 android:id="@+id/date"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="20.11.2025 12:00"
+                android:text=""
                 android:textAlignment="textEnd"/>
         </LinearLayout>
     </RelativeLayout>

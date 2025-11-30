@@ -41,7 +41,7 @@
             android:id="@+id/main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context=".MainActivity">
+            tools:context="io.github.payrexx.taptopayecr.MainActivity">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/AmountContainer"

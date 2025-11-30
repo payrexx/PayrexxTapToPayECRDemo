@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.payrexx.taptopayecr"
+    namespace = "io.github.payrexx.taptopayecr"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.payrexx.taptopayecr"
+        applicationId = "io.github.payrexx.taptopayecr"
         minSdk = 26
         targetSdk = 36
         versionCode = 1
@@ -37,7 +37,7 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.constraintlayout)
     implementation(libs.gson)
-    implementation(project(":payrexx:taptopay:sdk"))
+    implementation(libs.payrexxtaptopaysdk)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

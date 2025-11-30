@@ -1,4 +1,4 @@
-package com.payrexx.taptopayecr.adapter;
+package io.github.payrexx.taptopayecr.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,14 +7,14 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.payrexx.taptopay.sdk.model.Transaction;
-import com.payrexx.taptopayecr.R;
-import com.payrexx.taptopayecr.viewholder.TransactionListItem;
+import io.github.payrexx.taptopay.sdk.model.Transaction;
+import io.github.payrexx.taptopayecr.R;
+import io.github.payrexx.taptopayecr.viewholder.TransactionListItem;
 
 import java.util.List;
 
 public class TransactionListAdapter extends RecyclerView.Adapter<TransactionListItem> {
-    private List<Transaction> transactionList;
+    private final List<Transaction> transactionList;
 
     public TransactionListAdapter(List<Transaction> transactionList) {
         this.transactionList = transactionList;
